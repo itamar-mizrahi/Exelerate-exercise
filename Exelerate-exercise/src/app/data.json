@@ -1,0 +1,27 @@
+[  
+  {  
+    "id": 1,  
+    "name": "Jack",  
+    "amount": 200  
+  },  
+  {  
+    "id": 2,  
+    "name": "Peter",    
+    "amount": 300  
+  },  
+  {  
+    "id": 3,  
+    "name": "Mary",   
+    "amount": 450  
+  },  
+  {  
+    "id": 4,  
+    "name": "Smith",  
+    "amount": 2300  
+  },  
+  {  
+    "id": 5,  
+    "name": "John",  
+    "amount": 100  
+  }  
+]  

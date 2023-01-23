@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   title = 'Exelerate-exercise';
   Data = Data.sort((a, b) => b.amount - a.amount);
   data: Data[] = Data;
-  totalMoney: Number = 0;
+  totalMoney: Number| String = 'Loading..';
 
   constructor(private http: HttpClient, private toastr: ToastrService) {}
 
@@ -36,9 +36,8 @@ export class AppComponent implements OnInit {
     this.http
       .get<any>('http://www.randomnumberapi.com/api/v1.0/randomnumber')
       .subscribe((data) => {
-        this.totalMoney = data * 1000000;
+        this.totalMoney = data * 1000000 +' $';
         this.toastr.success('Updated', 'Successed', {
-          // toastClass: 'toast-top-center',
           timeOut: 1000,
         });
       });
@@ -49,15 +48,5 @@ export class AppComponent implements OnInit {
     setInterval(() => {
       this.getRandomNumber();
     }, 3000);
-
-    // this.http.get<any>('https://api.npms.io/v2/invalid-url').subscribe({
-    //     next: data => {
-    //         this.totalAngularPackages = data.total;
-    //     },
-    //     error: error => {
-    //         console.error('There was an error!', error);
-
-    //     }
-    // })
   }
 }
